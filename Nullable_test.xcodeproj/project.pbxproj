@@ -15,6 +15,11 @@
 		092112231E34A7EC002867FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092112211E34A7EC002867FF /* LaunchScreen.storyboard */; };
 		0921122E1E34A7EC002867FF /* Nullable_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0921122D1E34A7EC002867FF /* Nullable_testTests.m */; };
 		092112391E34A7EC002867FF /* Nullable_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 092112381E34A7EC002867FF /* Nullable_testUITests.m */; };
+		0921124B1E34AFE1002867FF /* NSDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0921124A1E34AFE1002867FF /* NSDictionary+safe.m */; };
+		0921124E1E34B2C5002867FF /* NSMutableDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0921124D1E34B2C5002867FF /* NSMutableDictionary+safe.m */; };
+		092112511E34B502002867FF /* NSArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 092112501E34B502002867FF /* NSArray+safe.m */; };
+		092112541E34B6A8002867FF /* NSMutableArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 092112531E34B6A8002867FF /* NSMutableArray+safe.m */; };
+		092112571E34BD98002867FF /* NSNull+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 092112561E34BD98002867FF /* NSNull+safe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,16 @@
 		092112341E34A7EC002867FF /* Nullable_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nullable_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		092112381E34A7EC002867FF /* Nullable_testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nullable_testUITests.m; sourceTree = "<group>"; };
 		0921123A1E34A7EC002867FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		092112491E34AFE1002867FF /* NSDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+safe.h"; sourceTree = "<group>"; };
+		0921124A1E34AFE1002867FF /* NSDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+safe.m"; sourceTree = "<group>"; };
+		0921124C1E34B2C5002867FF /* NSMutableDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+safe.h"; sourceTree = "<group>"; };
+		0921124D1E34B2C5002867FF /* NSMutableDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+safe.m"; sourceTree = "<group>"; };
+		0921124F1E34B502002867FF /* NSArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+safe.h"; sourceTree = "<group>"; };
+		092112501E34B502002867FF /* NSArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+safe.m"; sourceTree = "<group>"; };
+		092112521E34B6A8002867FF /* NSMutableArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+safe.h"; sourceTree = "<group>"; };
+		092112531E34B6A8002867FF /* NSMutableArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+safe.m"; sourceTree = "<group>"; };
+		092112551E34BD98002867FF /* NSNull+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+safe.h"; sourceTree = "<group>"; };
+		092112561E34BD98002867FF /* NSNull+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+safe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +120,16 @@
 				092112171E34A7EC002867FF /* AppDelegate.m */,
 				092112191E34A7EC002867FF /* ViewController.h */,
 				0921121A1E34A7EC002867FF /* ViewController.m */,
+				092112491E34AFE1002867FF /* NSDictionary+safe.h */,
+				0921124A1E34AFE1002867FF /* NSDictionary+safe.m */,
+				0921124C1E34B2C5002867FF /* NSMutableDictionary+safe.h */,
+				0921124D1E34B2C5002867FF /* NSMutableDictionary+safe.m */,
+				0921124F1E34B502002867FF /* NSArray+safe.h */,
+				092112501E34B502002867FF /* NSArray+safe.m */,
+				092112521E34B6A8002867FF /* NSMutableArray+safe.h */,
+				092112531E34B6A8002867FF /* NSMutableArray+safe.m */,
+				092112551E34BD98002867FF /* NSNull+safe.h */,
+				092112561E34BD98002867FF /* NSNull+safe.m */,
 				0921121C1E34A7EC002867FF /* Main.storyboard */,
 				0921121F1E34A7EC002867FF /* Assets.xcassets */,
 				092112211E34A7EC002867FF /* LaunchScreen.storyboard */,
@@ -277,8 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0921121B1E34A7EC002867FF /* ViewController.m in Sources */,
+				092112511E34B502002867FF /* NSArray+safe.m in Sources */,
+				092112541E34B6A8002867FF /* NSMutableArray+safe.m in Sources */,
 				092112181E34A7EC002867FF /* AppDelegate.m in Sources */,
 				092112151E34A7EC002867FF /* main.m in Sources */,
+				0921124B1E34AFE1002867FF /* NSDictionary+safe.m in Sources */,
+				092112571E34BD98002867FF /* NSNull+safe.m in Sources */,
+				0921124E1E34B2C5002867FF /* NSMutableDictionary+safe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
