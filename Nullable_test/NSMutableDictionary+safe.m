@@ -11,10 +11,13 @@
 @implementation NSMutableDictionary (safe)
 
 + (void)load {
-    Class dictClass = NSClassFromString(@"__NSDictionaryM");
-    Method originalMethod = class_getInstanceMethod(dictClass, @selector(setObject:forKey:));
-    Method swizzledMethod = class_getInstanceMethod(dictClass, @selector(zl_setObject:forKey:));
-    method_exchangeImplementations(originalMethod, swizzledMethod);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class dictClass = NSClassFromString(@"__NSDictionaryM");
+        Method originalMethod = class_getInstanceMethod(dictClass, @selector(setObject:forKey:));
+        Method swizzledMethod = class_getInstanceMethod(dictClass, @selector(zl_setObject:forKey:));
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    });
 }
 
 - (void)zl_setObject:(id)anObject forKey:(id <NSCopying>)aKey {

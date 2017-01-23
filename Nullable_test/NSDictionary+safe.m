@@ -11,9 +11,14 @@
 @implementation NSDictionary (safe)
 
 + (void)load {
-    Method originalMethod = class_getClassMethod(self, @selector(dictionaryWithObjects:forKeys:count:));
-    Method swizzledMethod = class_getClassMethod(self, @selector(zl_dictionaryWithObjects:forKeys:count:));
-    method_exchangeImplementations(originalMethod, swizzledMethod);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        Method originalMethod = class_getClassMethod(self, @selector(dictionaryWithObjects:forKeys:count:));
+        Method swizzledMethod = class_getClassMethod(self, @selector(zl_dictionaryWithObjects:forKeys:count:));
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    });
+
 }
 
 + (instancetype)zl_dictionaryWithObjects:(const id [])objects forKeys:(const id <NSCopying> [])keys count:(NSUInteger)cnt {

@@ -10,9 +10,12 @@
 #import <objc/runtime.h>
 @implementation NSArray (safe)
 + (void)load {
-    Method originalMethod = class_getClassMethod(self, @selector(arrayWithObjects:count:));
-    Method swizzledMethod = class_getClassMethod(self, @selector(zl_arrayWithObjects:count:));
-    method_exchangeImplementations(originalMethod, swizzledMethod);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Method originalMethod = class_getClassMethod(self, @selector(arrayWithObjects:count:));
+        Method swizzledMethod = class_getClassMethod(self, @selector(zl_arrayWithObjects:count:));
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    });
 }
 
 + (instancetype)zl_arrayWithObjects:(const id [])objects count:(NSUInteger)cnt {
